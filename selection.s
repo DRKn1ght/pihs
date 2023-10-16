@@ -5,6 +5,7 @@
     numBase: .int 4
     minPos: .int 0
     vetorTxt: .asciz "\nvetor: "
+    insertTxt: .asciz "Insira o vetor de tamanho 8 separado por espaco:\n> "
     vetorElemTxt: .string "%d, "
     scanVec: .string "%d"
     conti: .int 0
@@ -15,6 +16,10 @@
 .globl main
 
 main:
+    pushl $insertTxt
+    call printf
+    addl $4, %esp
+
     movl $v1, %edi
     call insert
     pushl $vetorTxt

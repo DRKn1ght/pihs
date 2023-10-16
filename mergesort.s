@@ -2,6 +2,7 @@
     esq: .int 0
     dir: .int 0
     vetorTxt: .asciz "\nvetor: "
+    insertTxt: .asciz "Insira o vetor de tamanho 10 separado por espaco:\n> "
     vetorElemTxt: .string "%d"
     vetorElemF: .string "%d\n"
     newLine: .string "\n"
@@ -18,10 +19,14 @@
 .globl main
 
 main:
-    # pushl $10
-    # pushl $v1
-    # call insert
-    # addl $8, %esp
+    pushl $insertTxt
+    call printf
+    addl $4, %esp
+
+    pushl $10
+    pushl $v1
+    call insert
+    addl $8, %esp
 
     pushl $vetorTxt
     call printf
