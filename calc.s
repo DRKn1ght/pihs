@@ -10,6 +10,7 @@
     two: .float 2
     opcao: .int 0
     opcaoFormat: .asciz "%d"
+    # a
 
 .section .text
     .global main
